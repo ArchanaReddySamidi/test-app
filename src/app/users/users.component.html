@@ -1,0 +1,9 @@
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{errorMessage}}
+</div>
+<p class="h6 mt-4" *ngIf="users.length > 0">Showing {{users.length}} records</p>
+<div class="row" *ngIf="users.length > 0">
+    <div class="col-sm-12 col-md-3 col-lg-4 mt-3" *ngFor="let user of users">
+        <app-user (emitDeleteUser)="deleteUser($event)" [user]="user"></app-user>
+    </div>
+</div>
